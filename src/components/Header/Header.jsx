@@ -20,7 +20,7 @@ const Header = () => {
 
           <li><a href="#">Notlar</a></li>
           <li><a href="/about">Hakkımızda</a></li>
-          <li><a href="#">İletişim</a></li>
+          <li><a href="/contact">İletişim</a></li>
         </ul>
       </nav>
 

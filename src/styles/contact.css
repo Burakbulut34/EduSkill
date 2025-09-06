@@ -1,0 +1,166 @@
+/* contact.css */
+
+.contact-page {
+  padding: 40px 20px;
+  background: #f9fafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* Sol - Form */
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.form-subtitle {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #4f46e5; /* Indigo-600 */
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+}
+
+.contact-form button {
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 600;
+  padding: 14px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 8px;
+}
+
+.contact-form button:hover {
+  background-color: #4338ca;
+}
+
+/* Sağ - İletişim Bilgileri */
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.contact-info ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-info ul li svg {
+  color: #4f46e5;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+/* Harita */
+.map-container {
+  flex-grow: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .contact-form, .contact-info {
+    width: 100%;
+  }
+
+  .contact-info ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+
+  .contact-info ul li {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form h2,
+  .contact-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+  }
+}
