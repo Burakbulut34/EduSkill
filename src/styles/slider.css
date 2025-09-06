@@ -1,0 +1,219 @@
+/* slider.css */
+
+.slider-container {
+  position: relative;
+  max-width: 100vw;
+  width: 100%;
+  height: 88vh;
+  overflow: hidden;
+  border-radius: 0;
+  background: transparent;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  padding: 0;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 2rem 4rem;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.slide-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+  filter: brightness(0.55);
+  transition: transform 0.5s ease;
+}
+
+.slide-img:hover,
+.slide-img:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+.slide-text {
+  position: relative;
+  z-index: 2;
+  max-width: 40%;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+  user-select: text;
+}
+
+.slide-text h2 {
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+}
+
+.slide-text p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: #e0e7ffcc;
+}
+
+/* Sadece slider'daki "Sınava Git" butonu için */
+.cta-row .cta-btn {
+  background: #6c63ff; /* Mor renk */
+  color: #fff;
+  border: none;
+  padding: 0.85rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  position: absolute;
+  top: 130px; /* slider’ın altına sabitle */
+  left: 20px;   /* sola sabitle */
+}
+
+/* Hover efekti: sadece renk değişsin */
+.cta-row .cta-btn:hover,
+.cta-row .cta-btn:focus {
+  background: #5a54d6;
+  outline: none;
+}
+
+
+
+/* Navigasyon Butonları */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(59, 130, 246, 0.8);
+  border: none;
+  color: white;
+  font-size: 2.8rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.7);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.nav-btn:hover,
+.nav-btn:focus {
+  background: #2563eb;
+  outline: none;
+  transform: scale(1.15);
+}
+
+.nav-btn:active {
+  transform: scale(1);
+}
+
+.nav-btn.prev {
+  left: 1.5rem;
+}
+
+.nav-btn.next {
+  right: 1.5rem;
+}
+
+/* Slider Noktaları */
+.slider-dots {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  user-select: none;
+  z-index: 3;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  background-color: #60a5fa88;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px #60a5fa88;
+  border: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dot:hover,
+.dot:focus {
+  background-color: #2563ebcc;
+  box-shadow: 0 0 18px #2563ebcc;
+  outline: none;
+}
+
+.dot.active {
+  background-color: #2563eb;
+  box-shadow: 0 0 24px #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .slide-text {
+    max-width: 60%;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .slide {
+    padding: 1.5rem 2rem;
+    align-items: flex-end;
+  }
+
+  .slide-text {
+    max-width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 0;
+  }
+
+  .slide-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .slide-text p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    border-radius: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .slide-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .slide-text p {
+    font-size: 0.9rem;
+  }
+}

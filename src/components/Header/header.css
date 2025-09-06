@@ -1,0 +1,245 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.premium-header {
+  background: rgb(34, 33, 33);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+.logo span {
+  color: #6c63ff;
+}
+
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links li a,
+.dropdown-toggle {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.nav-links li a:hover,
+.dropdown-toggle:hover {
+  color: #6c63ff;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+/* Ana dropdown */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgb(45, 45, 45);
+  list-style: none;
+  padding: 10px 0;
+  min-width: 180px;
+  display: none;
+  border-radius: 6px;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+/* Nested dropdown */
+.nested-dropdown {
+  position: relative;
+}
+
+.nested-toggle {
+  width: 100%;
+  padding: 10px 15px;
+  background: none;
+  color: white;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nested-menu {
+  position: absolute;
+  top: 0;
+  left: 100%; /* sağdan açılır */
+  background: rgb(60, 60, 60);
+  list-style: none;
+  padding: 5px 0;
+  min-width: 160px;
+  display: none;
+}
+
+.nested-menu.show {
+  display: block;
+}
+
+.nested-menu li a {
+  display: block;
+  padding: 8px 15px;
+  color: white;
+}
+
+.nested-menu li a:hover {
+  background: #6c63ff;
+  color: white;
+}
+
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 30px;
+  padding: 8px 15px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 200px;
+  font-size: 14px;
+}
+
+.search-box button {
+  border: none;
+  background: transparent;
+  color: #777;
+  cursor: pointer;
+}
+
+/* Login & Register button style */
+/* Login & Register Buttons */
+.buttons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  float: right;
+  cursor: pointer;
+  background-color: #6c63ff !important;
+  color: #fff !important;
+  border: none;
+  box-shadow: none !important; /* default'ta da shadow yok */
+  transition: none; /* animasyon istemiyorsan */
+}
+
+/* Hover, Focus, Active durumunda hiçbir değişiklik olmayacak */
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background-color: #6c63ff !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+
+
+.buttons-container.mobile {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobile Responsive - Fullscreen Menu */
+@media (max-width: 992px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(20, 20, 20, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 25px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .buttons-container.desktop {
+    display: none;
+  }
+
+  .buttons-container.mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+  }
+
+  .btn {
+    width: 200px;
+    text-align: center;
+  }
+}

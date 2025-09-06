@@ -1,0 +1,76 @@
+/* Genel stil */
+
+
+/* Accordion container */
+.accordion {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+/* Başlık butonları */
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 20px;
+  background: #e6e3de;
+  border: none;
+  border-bottom: 1px solid #d4d3ca;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover,
+.accordion-header[aria-expanded="true"] {
+  background-color: #d1cdc3;
+}
+
+.accordion-header .icon {
+  transition: transform 0.3s ease;
+  color: #555;
+}
+
+.accordion-header[aria-expanded="true"] .icon {
+  transform: rotate(180deg); /* Açılır-yukarı ok */
+}
+
+/* İçerik kısmı */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  background-color: #faf9f4;
+  padding: 0 20px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.accordion-content p {
+  margin: 15px 0;
+}
+
+/* Açık olan accordion için */
+.accordion-content.open {
+  max-height: 200px; /* İhtiyaca göre ayarlanabilir */
+  padding: 15px 20px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .accordion-header {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .accordion-content {
+    font-size: 0.9rem;
+  }
+}
