@@ -1,0 +1,141 @@
+.notlar-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.notlar-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.add-btn {
+  display: block;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.add-btn:hover {
+  background: linear-gradient(135deg, #4338ca, #2563eb);
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.note-form input,
+.note-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.note-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.save-btn {
+  background: #10b981;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: #059669;
+}
+
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.note-card:hover {
+  transform: translateY(-3px);
+}
+
+.note-card h3 {
+  margin: 0 0 8px;
+  color: #111827;
+}
+
+.note-card p {
+  margin: 0 0 12px;
+  color: #4b5563;
+}
+
+.note-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.edit-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #2563eb;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .note-card {
+    padding: 12px;
+  }
+
+  .add-btn,
+  .save-btn {
+    width: 100%;
+  }
+}
