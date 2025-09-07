@@ -70,28 +70,61 @@
 }
 
 /* Sadece slider'daki "Sınava Git" butonu için */
-.cta-row .cta-btn {
-  background: #6c63ff; /* Mor renk */
-  color: #fff;
-  border: none;
-  padding: 0.85rem 2.5rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  user-select: none;
-  position: absolute;
-  top: 130px; /* slider’ın altına sabitle */
-  left: 20px;   /* sola sabitle */
+/* CTA satırı hizalaması */
+.cta-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-/* Hover efekti: sadece renk değişsin */
-.cta-row .cta-btn:hover,
-.cta-row .cta-btn:focus {
-  background: #5a54d6;
-  outline: none;
+/* Modern buton stili */
+.cta-btn {
+  background:  #6366f1; /* mor-mavi degrade */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
+
+/* Hover efekti */
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+  background: #4f46e5;
+}
+
+/* Focus için erişilebilirlik */
+.cta-btn:focus {
+  outline: 3px solid rgba(99, 102, 241, 0.5);
+  outline-offset: 3px;
+}
+
+/* Responsive font boyutları */
+@media (max-width: 768px) {
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 10px 22px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-btn {
+    font-size: 0.8rem;
+    padding: 8px 18px;
+    border-radius: 8px;
+    width: 100%; /* küçük ekranlarda tam genişlik */
+  }
+
+  .cta-row {
+    padding: 0 10px;
+  }
+}
+
 
 
 

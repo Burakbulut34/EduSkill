@@ -1,0 +1,163 @@
+.reviews-section {
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f9fafb, #eef2ff);
+  font-family: "Inter", sans-serif;
+}
+
+.reviews-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.reviews-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-buttons button {
+  background: #fff;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+.nav-buttons button:hover {
+  background: #f3f4f6;
+  transform: scale(1.05);
+}
+
+/* Yorum container */
+.reviews-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #818cf8 #f3f4f6;
+}
+.reviews-container::-webkit-scrollbar {
+  height: 8px;
+}
+.reviews-container::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+.reviews-container::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
+
+/* Kart */
+.review-card {
+  flex: 0 0 100%;
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* İç kısım */
+.review-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background: #6366f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.review-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.review-card .title {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.review-card .text {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* Yıldızlar */
+.stars {
+  margin-top: 0.75rem;
+  color: #f59e0b;
+  font-size: 1.1rem;
+}
+
+/* Pagination dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.dots button {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 9999px;
+  background: #d1d5db;
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.dots button.active {
+  background: #4f46e5;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .review-card {
+    flex: 0 0 70%;
+  }
+}
+@media (min-width: 768px) {
+  .review-card {
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .review-card {
+    flex: 0 0 40%;
+  }
+}

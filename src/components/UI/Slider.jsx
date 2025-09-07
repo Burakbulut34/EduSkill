@@ -12,16 +12,9 @@ const slides = [
   {
     id: 2,
     image:
-      "https://res.cloudinary.com/dazvkvpch/image/upload/v1756990273/osym-img2_zmxwbp.jpg",
-    title: "OGM Materyal Sınav Testleri",
-    description: "React ile güçlü içerikler.",
-  },
-  {
-    id: 3,
-    image:
       "https://res.cloudinary.com/dazvkvpch/image/upload/v1756990274/osym-img3_ibftct.jpg",
-    title: "Mobil Uyumlu",
-    description: "Tüm cihazlarda sorunsuz görünüm.",
+    title: "3 Adım TYT-AYT Sınav Testleri",
+    description: "3 Adım sınav testleri ile kendinizi geliştirebilrsiniz.",
   },
 ];
 
