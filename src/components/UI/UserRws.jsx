@@ -5,8 +5,8 @@ export default function Testimonials({ reviews, autoAdvanceMs = 5000 }) {
   const sample = [
     {
       id: 1,
-      name: "Ayşe Y.",
-      title: "Frontend Developer",
+      name: "Emir M. A.",
+      title: "Bilgisayar Mühendisi",
       text: "Bu uygulama hayatımı kolaylaştırdı — temiz, hızlı ve responsive! Kesinlikle tavsiye ederim.",
       rating: 5,
     },
@@ -15,7 +15,7 @@ export default function Testimonials({ reviews, autoAdvanceMs = 5000 }) {
       name: "Murat K.",
       title: "Ürün Yöneticisi",
       text: "Tasarım hoş, kullanımı rahat. Auto-advance özelliği güzel ama istediğimde manuel geçiş de yapabiliyorum.",
-      rating: 4,
+      rating: 5,
     },
     {
       id: 3,
