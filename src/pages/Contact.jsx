@@ -1,9 +1,10 @@
 import "../styles/contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-
+import Helmet from "../components/Helmet/Helmet";
 export default function Contact() {
   return (
     <div className="contact-page">
+      <Helmet title="İletişim"/>
       <div className="contact-container">
 
         {/* Sol - İletişim Formu */}
@@ -12,11 +13,11 @@ export default function Contact() {
           <p className="form-subtitle">
             Sorularınızı için formu doldurun, size en kısa sürede geri dönüş yapalım.
           </p>
-          <form>
-            <input type="text" placeholder="Adınız Soyadınız" required />
-            <input type="email" placeholder="Email adresiniz" required />
-            <input type="text" placeholder="Konu" required />
-            <textarea placeholder="Mesajınız" rows="6" required></textarea>
+          <form action="https://formcarry.com/s/vSxkDqPgX_T" method="post">
+            <input type="text" placeholder="Adınız Soyadınız" required  name="Ad - Soyad"/>
+            <input type="email" placeholder="Email adresiniz" required name="Email"/>
+            <input type="text" placeholder="Konu" required name="Konu"/>
+            <textarea placeholder="Mesajınız" rows="6" required name="Mesaj"></textarea>
             <button type="submit">Gönder</button>
           </form>
         </div>

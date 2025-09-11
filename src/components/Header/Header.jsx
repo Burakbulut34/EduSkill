@@ -8,12 +8,12 @@ const Header = () => {
   return (
     <header className="premium-header">
       <div className="logo">
-        <a href="/"><span>Edu</span>Skill</a>
+        <a href="/home"><span>Edu</span>Skill</a>
       </div>
 
       <nav className={`navbar ${menuOpen ? "active" : ""}`}>
         <ul className="nav-links">
-          <li><a href="/">Anasayfa</a></li>
+          <li><a href="/home">Anasayfa</a></li>
           
           {/* Açılır kapanır menü */}
              <li> <a href="/tests">Testler</a></li>

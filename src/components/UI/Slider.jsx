@@ -1,26 +1,37 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/slider.css";
+import { useNavigate } from "react-router-dom"; // React Router kullanıyorsan ekle
 
 const slides = [
   {
     id: 1,
     image:
-      "https://res.cloudinary.com/dazvkvpch/image/upload/v1756990273/osym-img_ujimsf.jpg",
-    title: "Ösym Sınav Testleri",
-    description: "Responsive ve şık bir slider sayfası.",
+      "https://res.cloudinary.com/dazvkvpch/image/upload/v1757580819/ogmmateryal-img_iutjvk.jpg",
+    title: "Yks 2018-2025 arası çıkmış sorular",
+    description: "Yks çıkmış sorular, TYT, AYT ve YDT kitapları yayımlandı.",
+    link:"/tests"
   },
   {
     id: 2,
     image:
-      "https://res.cloudinary.com/dazvkvpch/image/upload/v1756990274/osym-img3_ibftct.jpg",
-    title: "3 Adım TYT-AYT Sınav Testleri",
-    description: "3 Adım sınav testleri ile kendinizi geliştirebilrsiniz.",
+      "https://res.cloudinary.com/dazvkvpch/image/upload/v1757580818/ogmmateryal-img-2_wsylgm.jpg",
+    title: "Dört Dörtlük Konu Testleri",
+    description: "Dört Dörtlük Konu Detayları için Lütfen Tıklayın.",
+    link:"/tests"
   },
+
+  {
+    id: 3,
+    image:"https://res.cloudinary.com/dazvkvpch/image/upload/v1757580818/slider-3_ywcohb.jpg",
+    title:"Yks Hazırlık",
+    description:"Sende yks hazırlığı istiyorsan daha önce sormuş olduğu soruları çözün.",
+    link:"/tests"
+  }
 ];
 
 const Slider = () => {
   const [page, setPage] = useState(0);
-
+  const navigate = useNavigate(); // React Router yönlendirme
   // Otomatik geçiş
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,6 +39,13 @@ const Slider = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  //slides`daki id`ye göre linkteki sayfaya yönlendirme
+  const handleNavigate = () =>{
+    if(slides[page].link){
+      navigate(slides[page].link)
+    }
+  }
 
   return (
     <section className="slider-container" aria-label="Ana slider">
@@ -45,6 +63,7 @@ const Slider = () => {
             <button
               className="btn cta-btn"
               aria-label={`Sınava Git: ${slides[page].title}`}
+              onClick={handleNavigate}
             >
               Sınava Git
             </button>
