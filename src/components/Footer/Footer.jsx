@@ -30,9 +30,9 @@ export default function Footer() {
             <ul className="footer-links">
                 <li><a href="/home">Anasayfa</a></li>
                 <li><a href="/tests">Testler</a></li>
-                <li><a href="#">Notlar</a></li>
+                <li><a href="/notes">Notlar</a></li>
                 <li><a href="/about">Hakkımızda</a></li>
-                <li><a href="#">İletişim</a></li>
+                <li><a href="/contact">İletişim</a></li>
             </ul>
         </div>
 
