@@ -16,7 +16,7 @@
 .add-btn {
   display: block;
   margin: 0 auto 20px;
-  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  background: linear-gradient(135deg, #222121, #19140f);
   color: white;
   font-weight: 600;
   border: none;
@@ -27,7 +27,7 @@
 }
 
 .add-btn:hover {
-  background: linear-gradient(135deg, #4338ca, #2563eb);
+ background: linear-gradient(135deg,  #19140f, #222121);
 }
 
 .note-form {
@@ -73,7 +73,7 @@
 }
 
 .note-card {
-  background: white;
+  background: rgb(34, 33, 33);
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 16px;
@@ -87,12 +87,12 @@
 
 .note-card h3 {
   margin: 0 0 8px;
-  color: #111827;
+  color: white;
 }
 
 .note-card p {
   margin: 0 0 12px;
-  color: #4b5563;
+  color: white;
 }
 
 .note-actions {

@@ -1,41 +1,72 @@
-import React,{useEffect , useState} from 'react'
+import React, { useEffect, useState } from "react";
 import "../styles/note.css";
-import Helmet from '../components/Helmet/Helmet';
+import Helmet from "../components/Helmet/Helmet";
 
-const Notlar = () => {
+const Notes = () => {
   const [notes, setNotes] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [editIndex, setEditIndex] = useState(null);
-  const [formData, setFormData] = useState({ title: "", description: "" });
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    image: "",
+  });
 
-  // LocalStorage'dan verileri yükle (ilk render)
+  // LocalStorage'dan yükle
   useEffect(() => {
-    const storedNotes = localStorage.getItem("notes");
-    if (storedNotes) {
-      setNotes(JSON.parse(storedNotes));
+    try {
+      const storedNotes = localStorage.getItem("notes");
+      if (storedNotes) {
+        setNotes(JSON.parse(storedNotes));
+      }
+    } catch (error) {
+      console.error("LocalStorage okuma hatası:", error);
     }
   }, []);
 
-  // notes değiştikçe localStorage’a kaydet
+  // LocalStorage'a kaydet
   useEffect(() => {
-    if (notes.length > 0) {
+    try {
       localStorage.setItem("notes", JSON.stringify(notes));
+    } catch (error) {
+      console.error("LocalStorage yazma hatası:", error);
     }
   }, [notes]);
 
+  // Dosya seçildiğinde Base64'e çevir
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({ ...formData, image: reader.result }); // Base64 kaydediliyor
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const now = new Date();
+    const formattedTime = now.toLocaleString("tr-TR", {
+      dateStyle: "short",
+      timeStyle: "short",
+    });
+
     if (editIndex !== null) {
-      // Düzenleme
       const updated = [...notes];
-      updated[editIndex] = formData;
+      updated[editIndex] = {
+        ...formData,
+        time: notes[editIndex].time, // zamanı koru
+      };
       setNotes(updated);
       setEditIndex(null);
     } else {
-      // Yeni ekleme
-      setNotes([...notes, formData]);
+      const newNote = { ...formData, time: formattedTime };
+      setNotes([...notes, newNote]);
     }
-    setFormData({ title: "", description: "" });
+
+    setFormData({ title: "", description: "", image: "" });
     setShowForm(false);
   };
 
@@ -46,20 +77,14 @@ const Notlar = () => {
   };
 
   const handleDelete = (index) => {
-    const selectedNote = notes[index];
-    if (
-      window.confirm(
-        `"${selectedNote.title}" notunu silmek istediğine emin misin?`
-      )
-    ) {
-      const updated = notes.filter((_, i) => i !== index);
-      setNotes(updated);
+    if (window.confirm(`"${notes[index].title}" notunu silmek istediğine emin misin?`)) {
+      setNotes(notes.filter((_, i) => i !== index));
     }
   };
 
   return (
     <div className="notlar-container">
-        <Helmet title="Notlar"/>
+      <Helmet title="Notlar" />
       <h2>📝 Notlarım</h2>
 
       <button className="add-btn" onClick={() => setShowForm(!showForm)}>
@@ -72,9 +97,7 @@ const Notlar = () => {
             type="text"
             placeholder="İşin Adı"
             value={formData.title}
-            onChange={(e) =>
-              setFormData({ ...formData, title: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
             required
           />
           <textarea
@@ -85,6 +108,17 @@ const Notlar = () => {
             }
             required
           ></textarea>
+
+          {/* URL ile resim ekleme */}
+          <input
+            type="url"
+            placeholder="Resim URL (isteğe bağlı)"
+            value={formData.image.startsWith("data:") ? "" : formData.image}
+            onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+          />
+
+          {/* Dosya ile resim ekleme */}
+
           <button type="submit" className="save-btn">
             {editIndex !== null ? "Güncelle" : "Kaydet"}
           </button>
@@ -94,8 +128,14 @@ const Notlar = () => {
       <ul className="notes-list">
         {notes.map((note, index) => (
           <li key={index} className="note-card">
+            {note.image && (
+              <div className="note-image">
+                <img src={note.image} alt={note.title} />
+              </div>
+            )}
             <h3>{note.title}</h3>
             <p>{note.description}</p>
+            <small className="note-date">{note.time}</small>
             <div className="note-actions">
               <button className="edit-btn" onClick={() => handleEdit(index)}>
                 Düzenle
@@ -111,4 +151,4 @@ const Notlar = () => {
   );
 };
 
-export default Notlar;
+export default Notes;

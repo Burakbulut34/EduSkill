@@ -6,7 +6,7 @@ import Tests from "./pages/Tests";
 import About from "./components/UI/About";
 import Footer from "./components/Footer/Footer";
 import Contact from "./pages/Contact";
-import Notes from "./pages/Note";
+import Notes from "./components/UI/NotesView" ;
 
 function App() {
   return (

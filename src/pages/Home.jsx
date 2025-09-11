@@ -3,7 +3,8 @@ import Helmet from "../components/Helmet/Helmet";
 import Slider from '../components/UI/Slider';
 import About from '../components/UI/About';
 import UserRws from "../components/UI/UserRws";
-import Notes from "../pages/Note";
+import Note from "../components/UI/NotesView";
+import Contact from "../pages/Contact";
 const Home = () => {
   return (
     <>
@@ -11,7 +12,8 @@ const Home = () => {
     <Slider/>
     <About/>
     <UserRws/>
-    <Notes/>
+    <Note/>
+    <Contact/>
     </>
   )
 }
