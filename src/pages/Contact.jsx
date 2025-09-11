@@ -1,10 +1,10 @@
 import "../styles/contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Helmet from "../components/Helmet/Helmet";
-export default function Contact() {
+export default function Contact({withHelmet = false}) {
   return (
     <div className="contact-page">
-      <Helmet title="İletişim"/>
+      {withHelmet && (<Helmet title="İletişim"/>)}
       <div className="contact-container">
 
         {/* Sol - İletişim Formu */}

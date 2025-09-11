@@ -3,7 +3,7 @@ import Helmet from "../Helmet/Helmet";
 
 import React, { useState, useEffect } from "react";
 
-const NotesApp = () => {
+const NotesApp = ({withHelmet = false}) => {
   const [notes, setNotes] = useState(() => {
     const saved = localStorage.getItem("notes");
     return saved ? JSON.parse(saved) : [];
@@ -76,7 +76,7 @@ const deleteNote = (id) => {
 
   return (
     <div style={styles.container}>
-      <Helmet title="Notlar"/>
+       {withHelmet && (<Helmet title="Notlar"/>)}
       <h1 style={styles.title}>📒 Notlarım</h1>
 
       {/* Not Ekle butonu */}

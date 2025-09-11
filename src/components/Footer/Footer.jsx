@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="footer-center">
             <h3>Sayfa Bağlantıları</h3>
             <ul className="footer-links">
-                <li><a href="/">Anasayfa</a></li>
+                <li><a href="/home">Anasayfa</a></li>
                 <li><a href="/tests">Testler</a></li>
                 <li><a href="#">Notlar</a></li>
                 <li><a href="/about">Hakkımızda</a></li>

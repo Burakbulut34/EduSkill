@@ -2,10 +2,11 @@ import React, {useState, useEffect} from "react";
 import "../../styles/about.css"; // CSS ayrı dosyada
 import İmg from "../../assets/Pages-img/eduskill.png"
 import db from "../../Firebase/firebase";
+import Helmet from "../Helmet/Helmet";
 
 import { doc, setDoc, getDocs, collection } from "firebase/firestore";
 
-export default function AboutUs() {
+export default function AboutUs({withHelmet = false}) {
 const [visitorCount, setVisitorCount] = useState(0);
 
 useEffect(() => {
@@ -37,6 +38,7 @@ useEffect(() => {
 
   return (
     <section className="about">
+             {withHelmet && (<Helmet title="Hakkımızda"/>)}
       <div className="about-container">
         <div className="about-text">
           <h2>YKS Test ve Soru Bankaları</h2>
